@@ -131,7 +131,7 @@ Critérios de coerência:
 
 1. Clone este repositório em sua máquina local:
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/fiap-ia-2025/chap7-phase2-statistical-analysis
 ```
 
 2. Abra o projeto no RStudio usando o arquivo `.Rproj`:
