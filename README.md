@@ -2,6 +2,14 @@
 
 Este projeto tem como objetivo aplicar técnicas de estatística descritiva utilizando a linguagem R, com foco em dados relacionados ao setor agropecuário brasileiro.
 
+## 📛 Integrantes
+
+- Amanda Pires - RM565045
+- Ana Gabriela - RM565235
+- Bianca Santa Cruz - RM561390
+- Milena Silva - RM565464
+- Nayana Miazaki - RM565045
+
 ## 🧭 Objetivo
 
 Criar uma base de dados com 30 linhas e 7 variáveis que represente, de forma realista e fundamentada, aspectos da agricultura no Brasil. Em seguida, realizar análises descritivas e gráficas com base nesses dados.
@@ -85,19 +93,60 @@ Critérios de coerência:
 - Propriedades com irrigação, assistência privada e grau de instrução mais alto tendem a ter produtividade maior.
 - Propriedades com “Nenhuma” assistência ou sem irrigação tendem a ficar na faixa mais baixa.
 
+## 📊 Análises Realizadas
 
-## 📈 Análises Previstas
+### 🔹 Análise da variável quantitativa: `produtividade_kg_ha`
 
-- Medidas de tendência central (média, mediana, moda)
-- Medidas de dispersão (amplitude, desvio padrão, variância)
-- Medidas separatrizes (quartis)
-- Gráficos de barras, histogramas e boxplots
-- Comparações de produtividade por tipo de assistência e uso de irrigação
-- Análise regional da produtividade (por estado)
+- Foram calculadas as medidas de tendência central (média, mediana, moda), dispersão (desvio padrão, variância, amplitude) e separatrizes (quartis).
+- A variável foi analisada graficamente por meio de:
+  - **Boxplot segmentado por `tipo_assistencia`**: escolhido por permitir comparação direta entre grupos, evidenciando mediana, dispersão e outliers.
+  - **Violin plot segmentado por `grau_instrucao`**: utilizado para mostrar, além das medidas centrais, a forma e concentração da distribuição dos dados.
 
+### 🔹 Análise da variável qualitativa: `uso_irrigacao`
+
+- A variável qualitativa `uso_irrigacao` foi analisada graficamente por meio de um **gráfico de densidade da produtividade**, segmentado por grupos (Sim/Não).
+- A escolha da densidade se justifica pelo fato de `uso_irrigacao` ser uma variável binária, o que permite a sobreposição clara das curvas e revela o deslocamento da distribuição da produtividade para valores maiores nas propriedades que utilizam irrigação.
+
+## 📌 Resultados e Insights
+
+### 📊 Produtividade
+
+- Fazendas com **assistência privada** apresentaram maior produtividade mediana, ainda que com maior variabilidade entre casos. Isso sugere alto potencial com dependência da qualidade do serviço.
+- Fazendas com **assistência pública** tiveram produtividade mediana mais baixa e distribuição mais concentrada, o que pode refletir padronização, mas pouca efetividade.
+- A variável `grau_instrucao` demonstrou relação direta: níveis mais altos de formação apresentaram concentração de produtividade em faixas superiores, reforçando a importância da qualificação técnica.
+
+### 🌱 Uso de Irrigação
+
+- A densidade da produtividade nas fazendas com irrigação apresenta um pico deslocado para faixas mais altas, indicando que a prática está associada a melhores desempenhos produtivos.
+- A curva do grupo que **não utiliza irrigação** é mais alta, refletindo maior número de fazendas, porém concentradas em faixas de produtividade mais baixas.
 
 ## 📁 Estrutura de Arquivos
 
 - `README.md` → Documentação do projeto
 - `agriculture_dataset.xlsx` → Base de dados simulada
 - `agriculture-project.R` → Script com as análises em R
+- `agriculture-project.Rproj`: Arquivo de projeto RStudio
+
+## ▶️ Como Rodar o Projeto
+
+1. Clone este repositório em sua máquina local:
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+2. Abra o projeto no RStudio usando o arquivo `.Rproj`:
+```
+agriculture-project.Rproj
+```
+
+3. Certifique-se de ter as bibliotecas necessárias instaladas:
+```r
+install.packages(c("ggplot2", "readxl"))
+```
+
+4. Rode o script principal:
+```r
+source("agriculture_analysis.R")
+```
+
+Isso irá executar todas as análises estatísticas e gerar os gráficos descritos no README.
